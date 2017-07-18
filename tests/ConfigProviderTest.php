@@ -28,14 +28,11 @@ database:
 YAML;
 
 
-        $basePath = FileSystemFactory::create([
-            'config.yml' => $config_yml
-        ]);
+        $configFilePath = FileSystemFactory::create($config_yml);
 
         $app = new Application();
 
-        $app->register(new ConfigProvider($basePath . '/config.yml'), array(
-        ));
+        $app->register(new ConfigProvider($configFilePath), array());
 
         $this->assertEquals("sqlite", $app['config']['database']['driver']);
 
