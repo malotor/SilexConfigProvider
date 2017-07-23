@@ -55,7 +55,7 @@ echo $app['config']['database']['driver'] # sqlite
 #Override
 echo $app['config']['debug'] # true
 #Replacement
-echo $app['config']['debug'] # /home/user/config
+echo $app['config']['config_path'] # /home/user/config
 
 ```
 
