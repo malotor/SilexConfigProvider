@@ -23,12 +23,9 @@ class ConfigProvider implements ServiceProviderInterface
 
     public function register(Container $pimple)
     {
-        // TODO: Implement register() method.
-
         $parser = new YamlFileParser();
 
-        $config = $parser->parse($this->configFile, $pimple);
+        $pimple['config'] = $parser->parse($this->configFile, $pimple);
 
-        $pimple['config'] = $config;
     }
 }
