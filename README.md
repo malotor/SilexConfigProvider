@@ -13,7 +13,18 @@ This provider add these featres:
 - Phpunit 6
 
 
-#Register the provider
+## Install the project
+
+    $ docker-compose build
+    $ docker-compose run --rm composer install
+    
+## Run the tests
+
+    $ docker-compose up -d tests
+    $ sh scripts/phpunit --converage-html ./coverage
+    
+
+# Example
 
 
 ```yaml
@@ -48,13 +59,3 @@ echo $app['config']['debug'] # /home/user/config
 
 ```
 
-
-## Install the project
-
-    $ docker-compose build
-    $ docker-compose run --rm composer install
-    
-## Run the tests
-
-    $ docker-compose up -d tests
-    $ sh scripts/phpunit --converage-html ./coverage
